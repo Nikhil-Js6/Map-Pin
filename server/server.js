@@ -16,7 +16,7 @@ mongoose.connect(process.env.DB_URL, {
     console.log("Connected to the Database");
 })
 .catch((err) => {
-    console.log("Error Connecting to DB:",err);
+    console.log("Error Connecting to DB:", err);
 });
 
 app.use("/api/users", userRoute);
@@ -24,6 +24,6 @@ app.use("/api/pins", pinRoute);
 
 let port = process.env.PORT || 3300;
 
-app.listen(port, ()=>{
-    console.log("Server Started on Port:",port);
+app.listen(port, () => {
+    console.log("Server Started on Port:", port);
 });
