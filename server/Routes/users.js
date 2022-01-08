@@ -9,7 +9,11 @@ const saltRounds = 10;
 
 router.post("/register", async (req, res) => {
     try {
-        
+        const newUser = new User({
+            username : req.body.username,
+            email : req.body.email,
+            password : hashedPassword,
+        });
         const savedUser = await newUser.save();
         res.status(200).json(savedUser);
     }catch(err) {
