@@ -24,4 +24,10 @@ router.post("/register", async (req, res) => {
 
 // Login
 
+router.post("/login", async (req, res) => {
+    const foundUser = await User.findOne({
+        username: req.body.username,
+    });
+});
+
 module.exports = router;
