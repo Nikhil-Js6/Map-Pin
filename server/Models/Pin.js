@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const pinSchema = new mongoose.Schema({
@@ -36,4 +35,3 @@ const pinSchema = new mongoose.Schema({
 );
 
 module.exports = new mongoose.model("Pin", pinSchema);
-
