@@ -28,6 +28,15 @@ router.post("/login", async (req, res) => {
     const foundUser = await User.findOne({
         username: req.body.username,
     });
+    if (foundUser) {
+        try {
+             res.status(200).json(foundUser)
+        }catch(err) {
+            res.status(500).json(err);
+        }
+    }else {
+        res.status(404).json("No User Found!");
+    }
 });
 
 module.exports = router;
